@@ -24,6 +24,9 @@ export default {
   * {
       margin: 0;
       padding: 0;
+      outline: 0;
+      border: 0;
+      box-sizing: border-box;
   }
 
   a img {
@@ -33,6 +36,7 @@ export default {
   a {
       text-decoration: none;
   }
+
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
