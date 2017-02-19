@@ -38,3 +38,6 @@ jspm_packages
 
 # No dist file only for master repo
 # dist
+
+# for dist no map file
+dist/js/*.map
