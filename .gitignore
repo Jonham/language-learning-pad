@@ -36,5 +36,5 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# No dist file
-dist
+# No dist file only for master repo
+# dist
