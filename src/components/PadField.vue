@@ -3,11 +3,13 @@
     <field-header
       :title="headerMsg"
     ></field-header>
+    <field-content></field-content>
   </div>
 </template>
 
 <script>
 import FieldHeader from './PadField/FieldHeader.vue'
+import FieldContent from './PadField/FieldContent.vue'
 
 export default {
   name: 'PadField',
@@ -17,7 +19,8 @@ export default {
     }
   },
   components: {
-    FieldHeader
+    FieldHeader,
+    FieldContent
   }
 }
 </script>

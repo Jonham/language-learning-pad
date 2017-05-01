@@ -19,44 +19,40 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
+    // extensions: ['.js', '.jsx', '.vue', '.json'],
     extensions: ['.js', '.vue', '.json'],
-    modules: [
-      resolve('src'),
-      resolve('node_modules')
-    ],
     alias: {
-      'vue$': 'vue/dist/vue.common.js',
-      'src': resolve('src'),
-      'assets': resolve('src/assets'),
-      'components': resolve('src/components')
+      'vue$': 'vue/dist/vue.esm.js',
+      '~': resolve('node_modules'),
+      '@': resolve('src')
     }
   },
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: vueLoaderConfig
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        options: {
+          limit: 102400,
+          name: utils.assetsPath('img/[name].[ext]?[hash:7]')
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        options: {
+          limit: 100,
+          name: utils.assetsPath('fonts/[name].[ext]?[hash:7]')
         }
       }
     ]
